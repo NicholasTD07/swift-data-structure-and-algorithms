@@ -15,7 +15,7 @@ func binarySearch(_ array: [Int], value: Int) -> Int? {
     guard !array.isEmpty else { return nil }
 
     var lowEnd = 0
-    var highEnd = array.count
+    var highEnd = array.count - 1
     var index = (lowEnd + highEnd) / 2
     var x: Int!
 
