@@ -25,9 +25,9 @@ func binarySearch(_ array: [Int], value: Int) -> Int? {
         if x == value {
             return index
         } else if x < value {
-            lowEnd = index
+            lowEnd = index + 1
         } else if x > value {
-            highEnd = index
+            highEnd = index - 1
         }
 
         index = (lowEnd + highEnd) / 2
