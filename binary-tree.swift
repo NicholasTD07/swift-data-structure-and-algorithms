@@ -44,23 +44,43 @@ class BinaryTree {
 
     // Return true if the value is in the tree, otherwise return false
     func search(_ value: Int) -> Bool {
-
-        return false
+        return preorderSearch(root, value: value)
     }
 
     // Return a string containing all tree nodes as they are visited in a pre-order traversal.
     func printTree() -> String {
-        return ""
+        return preorderPrint(root, traverse: "")
     }
 
     // Helper method - use to create a recursive search solution.
     func preorderSearch(_ start: Node?, value: Int) -> Bool {
-        return false
+        guard let node = start else { return false }
+
+        if node.value == value {
+            return true
+        }
+
+        let left = preorderSearch(node.left, value: value)
+        let right = preorderSearch(node.right, value: value)
+
+        return left || right
     }
 
     // Helper method - use to construct a string representing the preordered nodes
-    func preorderPrint(_ start: Node?, traverse: String) -> String? {
-        return ""
+    func preorderPrint(_ start: Node?, traverse: String) -> String {
+        guard let node = start else { return traverse }
+
+        let new: String
+        if traverse.isEmpty {
+            new = "\(node.value)"
+        } else {
+            new = traverse + "-\(node.value)"
+        }
+
+        let x = preorderPrint(node.left, traverse: new)
+        let y = preorderPrint(node.right, traverse: x)
+
+        return y
     }
 }
 
