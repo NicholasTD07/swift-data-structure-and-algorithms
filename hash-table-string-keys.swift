@@ -38,23 +38,26 @@ class HashTable {
         table = Array(repeating: [], count: 10000)
     }
 
-    // use the helper functions to calulate the hash value, per the instructions
-    func calculateHashValue(_ input: String) -> Int {
-        return 0
-    }
-
     // store the input in the hash table, using the appropriate bucket
     func store(_ input: String) {
-
+        let index = calculateHashValue(input)
+        table[index].append(input)
     }
 
     // return true if the input string is stored in the hash table, otherwise return false
     func lookup(_ input: String) -> Bool {
-        return false
+        let index = calculateHashValue(input)
+
+        return table[index].contains(input)
+    }
+
+    // use the helper functions to calulate the hash value, per the instructions
+    private func calculateHashValue(_ input: String) -> Int {
+        return 100 * getFirstCharacterValue(input) + getSecondCharacterValue(input)
     }
 
     // gets the hash value of the first character
-    func getFirstCharacterValue(_ input: String) -> Int {
+    private func getFirstCharacterValue(_ input: String) -> Int {
         if input.count > 0 {
             return Int(input[input.startIndex].unicodeScalars.first!.value)
         }
