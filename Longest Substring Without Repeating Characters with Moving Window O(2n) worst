@@ -1,0 +1,53 @@
+/* 
+ https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+ 
+ Given a string, find the length of the longest substring without repeating characters.
+ 
+ Example 1:
+ 
+ Input: "abcabcbb"
+ Output: 3 
+ Explanation: The answer is "abc", with the length of 3. 
+ Example 2:
+ 
+ Input: "bbbbb"
+ Output: 1
+ Explanation: The answer is "b", with the length of 1.
+ Example 3:
+ 
+ Input: "pwwkew"
+ Output: 3
+ Explanation: The answer is "wke", with the length of 3. 
+ Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ */
+
+class Solution {
+    func lengthOfLongestSubstring(_ s: String) -> Int {
+        let s = Array(s)
+        let n = s.count
+        var sub = Set<Character>()
+        var maximum = 0
+        var (i, j) = (0, 0)
+        
+        while (i < n && j < n) {
+            let c = s[j]
+            if sub.contains(c) {
+                sub.remove(s[i])
+                i += 1
+            } else {
+                sub.insert(c)
+                j += 1
+                maximum = max(maximum, j - i)
+            }
+        }
+        
+        return maximum
+    }
+}
+
+
+let solution = Solution()
+//print(solution.lengthOfLongestSubstring("abcabcbb"))
+//print(solution.lengthOfLongestSubstring("pwwkew"))
+print(solution.lengthOfLongestSubstring("pwwwwwwwkeeeeeewwpcb")) // wpcb
+//print(solution.lengthOfLongestSubstring("bbbb"))
