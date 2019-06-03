@@ -1,5 +1,16 @@
 # https://www.hackerrank.com/challenges/queue-using-two-stacks/problem
 
+# Takeaway is that
+# Think about whether you have to do something every time?
+# Is there a duplicated work somewhere?
+# Especially, when you are reversing arrays twice every time!
+# Must there be doubled work somewhere!
+
+
+
+
+
+
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 
 # Queue: FIFO
