@@ -53,8 +53,24 @@ to stdout.
 #
 #
 
-# Naive solution
+# Clever solution
+# https://en.wikipedia.org/wiki/Cycle_detection
 def has_cycle(head):
+    slow = head
+    fast = head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+        if slow == fast:
+            return 1
+
+    return 0
+
+
+# Naive solution
+def has_cycle_naive(head):
     node = head
     visited = []
     while node:
