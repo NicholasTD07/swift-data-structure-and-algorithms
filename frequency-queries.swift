@@ -127,6 +127,75 @@ When the first output query is run, the array is empty. We insert two
 """
 
 
+// Maybe rather than using a forEach... Use something else?
+
+// Still, timed out...
+func freqQuery_V2(queries: [[Int]]) -> [Int] {
+    var dataCounters = [Int: Int]()
+    var maximumCounters = [Int: Int]()
+    var output = [Int]()
+
+    queries.forEach { pair in
+        let operation = pair[0]
+        let element = pair[1]
+
+        switch operation {
+        case 1:
+            // dataCounters.append(element)
+            let count = dataCounters[element, default: 0]
+            let newCount = count + 1
+            dataCounters[element] = newCount
+
+            let oldMaximum = maximumCounters[count, default: 0]
+            let newMaximum = maximumCounters[newCount, default: 0]
+
+            if oldMaximum > 0 {
+                maximumCounters[count] = oldMaximum - 1
+            }
+            maximumCounters[newCount] = newMaximum + 1
+        case 2: // removing
+            // dataCounters.removeFirst(element)
+            let count = dataCounters[element, default: 0]
+            let newCount = count - 1
+
+            if count > 0 {
+                dataCounters[element] = newCount
+
+                let oldMaximum = maximumCounters[count, default: 0]
+                let newMaximum = maximumCounters[newCount, default: 0]
+
+                if oldMaximum > 0 {
+                    maximumCounters[count] = oldMaximum - 1
+                }
+                maximumCounters[newCount] = newMaximum + 1
+            }
+        case 3:
+            // let find = dataCounters.lazy.first { key, value in
+            //     return value == element
+            // }
+
+            if
+                let count = maximumCounters[element],
+                count > 0
+            {
+                output.append(1)
+            } else {
+                output.append(0)
+            }
+            // if find != nil {
+            //     output.append(1)
+            // } else {
+            //     output.append(0)
+            // }
+        default: fatalError("WAT?")
+        }
+    }
+
+    return output
+}
+
+
+
 // How and can we compile all the query op into one list and just go through the data once to output all the query outputs?
 // CANNOT. The operation is based on the state of the data.
 
