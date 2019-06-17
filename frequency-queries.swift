@@ -134,6 +134,9 @@ When the first output query is run, the array is empty. We insert two
 // So we don't have to go through the whole data every time when an query arrives.
 // Probably we can. 
 
+// We definitely can maintain another dict to keep track of the counts.
+// Let me think about it again. Hmmm....
+
 
 // naive solution which times out when the input gets larger
 func freqQuery(queries: [[Int]]) -> [Int] {
