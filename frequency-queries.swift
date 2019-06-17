@@ -127,7 +127,13 @@ When the first output query is run, the array is empty. We insert two
 """
 
 
-// How can we compile all the query op into one list and just go through the data once to output all the query outputs?
+// How and can we compile all the query op into one list and just go through the data once to output all the query outputs?
+// CANNOT. The operation is based on the state of the data.
+
+// Can we maintain another dict to keep track of the counts?
+// So we don't have to go through the whole data every time when an query arrives.
+// Probably we can. 
+
 
 // naive solution which times out when the input gets larger
 func freqQuery(queries: [[Int]]) -> [Int] {
