@@ -127,6 +127,8 @@ When the first output query is run, the array is empty. We insert two
 """
 
 
+// How can we compile all the query op into one list and just go through the data once to output all the query outputs?
+
 // naive solution which times out when the input gets larger
 func freqQuery(queries: [[Int]]) -> [Int] {
     var data = [Int: Int]()
