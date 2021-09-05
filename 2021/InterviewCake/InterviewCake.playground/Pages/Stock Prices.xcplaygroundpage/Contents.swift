@@ -1,3 +1,7 @@
+//: [Previous](@previous)
+
+import Foundation
+
 // https://www.interviewcake.com/question/swift/stock-price
 
 /*
@@ -17,29 +21,10 @@
  yesterday.
  */
 
-let stockPrices = [10, 7, 5, 8, 11, 9]
-
-func getMaxProfit(from prices: [Int]) -> Int? {
-    // more than 2
-    guard prices.count >= 2 else {
-        return nil
-    }
-
-    var currentMinPrice = prices[0]
-    var currentMaxProfit = prices[1] - currentMinPrice
-
-    for currentPrice in prices[1...] {
-        let profit = currentPrice - currentMinPrice
-
-        currentMaxProfit = max(currentMaxProfit, profit)
-
-        currentMinPrice = min(currentMinPrice, currentPrice)
-    }
-
-    return currentMaxProfit
-}
-
-print(getMaxProfit(from: stockPrices)!)
+print(getMaxProfit(from: [10, 7, 5, 8, 11, 9])! == 6) // 11 - 5 = 6
 
 
-print(getMaxProfit(from: [10, 6, 5, 4])!)
+print(getMaxProfit(from: [10, 6, 5, 4])! == -1) // 5 - 6 = -1
+
+
+//: [Next](@next)
