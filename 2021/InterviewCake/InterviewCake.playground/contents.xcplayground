@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' executeOnSourceChanges='true' importAppTypes='true'>
     <pages>
-        <page name='Reverse Words In Place'/>
-        <page name='Reverse Characters In Place'/>
-        <page name='Merge Meeting Times'/>
         <page name='Stock Prices'/>
+        <page name='Merge Meeting Times'/>
+        <page name='Reverse Characters In Place'/>
+        <page name='Reverse Words In Place'/>
     </pages>
 </playground>
