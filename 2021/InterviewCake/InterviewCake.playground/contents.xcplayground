@@ -6,5 +6,6 @@
         <page name='Reverse Characters In Place'/>
         <page name='Reverse Words In Place'/>
         <page name='Merge Sorted Arrays'/>
+        <page name='Cafe Order Checker'/>
     </pages>
 </playground>
