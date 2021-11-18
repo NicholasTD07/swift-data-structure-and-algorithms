@@ -17,7 +17,7 @@ public func mergeArrays(_ leftArray: [Int], _ rightArray: [Int]) -> [Int] {
 
 
     var merged: [Int] = []
-    // MARK: - Improvement:
+    // MARK: - Next line is a performance improvement
     merged.reserveCapacity(leftArray.count + rightArray.count)
 
     while leftIndex < leftArray.endIndex || rightIndex < rightArray.endIndex {
