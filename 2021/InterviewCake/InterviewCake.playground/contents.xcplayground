@@ -9,6 +9,7 @@
         <page name='Cafe Order Checker'/>
         <page name='Inflight Entertainment System'/>
         <page name='Palindrome Permutations Checker'/>
-        <page name='Word Cloud'/>
+        <page name='[WIP] Hash - Word Cloud'/>
+        <page name='Greedy - In-Place Shuffle'/>
     </pages>
 </playground>
